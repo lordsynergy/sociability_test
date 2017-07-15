@@ -8,12 +8,12 @@ if (Gem.win_platform?)
   end
 end
 
-require_relative "test"
-require_relative "result_print"
+require_relative "lib/test"
+require_relative "lib/result_print"
 
 # Возможность ввести свое имя в стоке параметров запуска программы
 name = ARGV[0]
-# Если ничего не ввели, то:
+# Если ничего не ввели, то:socia
 if name == nil
   name = "Таинственная Персона"
 elsif name == "-v"
