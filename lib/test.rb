@@ -1,5 +1,7 @@
 # Класс, отвечающий за вывод вопросов теста, окончание теста и подсчет баллов
 class Test
+  attr_reader :points
+
   def initialize(questions_path)
     # Проверяем наличие файла с вопросами
     unless File.exist?(questions_path)
@@ -16,7 +18,7 @@ class Test
 
   # Метод, определяющий окончание теста
   def finished?
-    return @current_question >= @questions.size
+    @current_question >= @questions.size
   end
 
   # Метод вывода следующего вопроса теста и подсчата баллов
@@ -30,18 +32,10 @@ class Test
       user_input = gets.to_i
     end
 
-    if user_input == 1
-      @points += 2
-    elsif user_input == 3
-      @points +=1
-    end
+    @points += 2 if user_input == 1
+    @points += 1 if user_input == 3
 
     @current_question += 1
-  end
-
-  # Метод, возвращающий общее количество баллов
-  def points
-    @points
   end
 end
 

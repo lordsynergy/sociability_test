@@ -16,18 +16,12 @@ class ResultPrint
     puts "\n\nРезультат теста (всего баллов - #{test.points})"
 
     case
-      when test.points >= 30
-        puts @results[0]
-      when test.points >= 25
-        puts @results[1]
-      when test.points >= 19
-        puts @results[2]
-      when test.points >= 14
-        puts @results[3]
-      when test.points >= 9
-        puts @results[4]
-      when test.points >= 4
-        puts @results[5]
+      when test.points >= 30 then puts @results[0]
+      when test.points >= 25 then puts @results[1]
+      when test.points >= 19 then puts @results[2]
+      when test.points >= 14 then puts @results[3]
+      when test.points >= 9 then puts @results[4]
+      when test.points >= 4 then puts @results[5]
       else
         puts @results[6]
     end
